@@ -1,0 +1,770 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+  background-color: #F6F3EE;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: medium;
+}
+
+body a{
+  text-decoration: none;
+}
+
+/* Cabeçalho minimalista e delicado */
+.cabeca {
+    background: rgba(255, 255, 255, 0.55); /* Mais translúcido e leve */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(180, 165, 215, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Alinhamento limpo do logo e do menu */
+.topo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo discreto e proporcional */
+#logo {
+    height: 36px;
+    width: auto;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Lista de navegação limpa */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 32px; /* Espaço arejado entre os links */
+}
+
+/* Links minimalistas com tipografia fina e espaçada */
+.menu a {
+    position: relative;
+    color: #6b637d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #8c6bb1;
+}
+
+/* Linha pastel delicada que aparece suavemente ao passar o mouse */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: #b89ce6;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/*==============================
+      SEÇÃO HOME + CARROSSEL
+  ==============================*/
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.6s ease-in-out;
+}
+
+/* Camada lilás escura suave por cima da foto para dar leitura */
+.home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(35, 25, 55, 0.45);
+}
+
+/* Letras na frente da foto */
+.home-texto {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.logo-home {
+    width: 240px;           /* Tamanho equilibrado no centro do banner */
+    max-width: 75%;         /* Adapta bem em telas de celular */
+    height: auto;
+    margin-bottom: 12px;
+    /* Transforma o logo preto em branco puro e adiciona sombra suave */
+    filter: brightness(0) invert(1) drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
+}
+
+.home-texto p {
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    color: #f3ebff;
+}
+
+.home-texto a {
+    padding: 12px 26px;
+    background: rgba(239, 228, 255, 0.85);
+    color: #4a3570;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+/* Botões laterais simples */
+.seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.seta:hover { background: rgba(239, 228, 255, 0.85); color: #4a3570; }
+.prev { left: 20px; }
+.next { right: 20px; }
+
+
+/* Títulos das seções */
+.title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 40px 0 20px;
+    color: #5c5470;
+}
+
+/*============================
+        CARDS DOS MEMBROS
+  ============================*/
+
+/* Usa Flexbox para centralizar tanto a 1ª linha (4 cards) quanto a 2ª linha (3 cards) */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os 3 cards de baixo no meio da página */
+    align-items: stretch;    /* Mantém todos os cards da mesma linha com a mesma altura */
+    gap: 20px;
+    max-width: 1000px;       /* Limita a 4 cards por linha em telas grandes */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Largura fixa para cada card manter a proporção exata */
+.cards {
+    width: 220px;            /* Largura fixa (4 x 220px + espaços cabe certinho nos 1000px) */
+    background: linear-gradient(145deg, #efe4ff, #dfd0ff);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(149, 138, 173, 0.16);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    display: flex;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(145deg, #e7d6ff, #d4bfff);
+    box-shadow: 0 10px 22px rgba(149, 138, 173, 0.25);
+}
+
+/* Conteúdo interno mais enxuto */
+.cards article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+    box-sizing: border-box;
+    color: #3d374a;
+}
+
+/* Foto proporcional ao card menor */
+.cards img {
+    width: 140px;
+    height: 170px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    display: block;
+}
+
+.cards h3 {
+    margin: 12px 0 6px;
+    font-size: 1.05rem;
+}
+
+.cards p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/*==================================
+          CARDS DAS MÚSICAS
+  ==================================*/
+
+/* Grade compacta e centralizada para as músicas */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
+    justify-content: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 20px;
+}
+
+/* Visual do card de música em estilo pastel */
+.music-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(184, 156, 230, 0.35);
+    border-radius: 16px;
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(149, 138, 173, 0.14);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(149, 138, 173, 0.25);
+}
+
+/* Contêiner da capa para posicionar o botão de play no centro */
+.cover-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantém todas as capas perfeitamente quadradas */
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.cover-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.music-card:hover .cover-container img {
+    transform: scale(1.05);
+}
+
+/* Botão circular de Play (▶) centralizado sobre a capa */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(239, 228, 255, 0.9);
+    color: #553c9a;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.play-btn:hover {
+    background: #b89ce6;
+    color: #ffffff;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Título da música */
+.music-info h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a4458;
+    line-height: 1.3;
+}
+
+/* Animação de pulso lilás para o card que está tocando */
+@keyframes pulsoLilas {
+    0% { box-shadow: 0 0 10px rgba(184, 156, 230, 0.5); }
+    50% { box-shadow: 0 0 24px rgba(184, 156, 230, 0.95); }
+    100% { box-shadow: 0 0 10px rgba(184, 156, 230, 0.5); }
+}
+
+/* Destaque aplicado via JS no card ativo */
+.music-card.tocando {
+    border-color: #b89ce6;
+    transform: translateY(-6px) scale(1.02);
+    animation: pulsoLilas 2s infinite ease-in-out;
+}
+
+/* Deixa o botão de play fixo em roxo enquanto toca */
+.music-card.tocando .play-btn {
+    background: #9b72cf;
+    color: #ffffff;
+}
+
+/*===================
+    DICIONÁRIO ARMY
+  ===================*/
+
+/* Seção Dicionário ARMY Interativo */
+.secao-dicionario {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 20px;
+    text-align: center;
+}
+
+.secao-dicionario h2 {
+    margin-bottom: 6px;
+}
+
+.dicionario-sub {
+    font-size: 0.9rem;
+    color: #6b637d;
+    margin: 0 0 20px;
+}
+
+/* Barra de busca pastel */
+.dicionario-busca {
+    margin-bottom: 28px;
+}
+
+#busca-termo {
+    width: 100%;
+    max-width: 380px;
+    padding: 11px 18px;
+    border-radius: 25px;
+    border: 1px solid rgba(184, 156, 230, 0.5);
+    background: rgba(255, 255, 255, 0.8);
+    color: #3d374a;
+    font-size: 0.9rem;
+    outline: none;
+    box-shadow: 0 4px 12px rgba(149, 138, 173, 0.12);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#busca-termo:focus {
+    border-color: #9b72cf;
+    box-shadow: 0 4px 16px rgba(155, 114, 207, 0.25);
+}
+
+/* Grade centralizada */
+.dicionario-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estrutura do Flip Card 3D */
+.flip-card {
+    width: 280px;
+    height: 195px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Gira o card quando recebe a classe .virado */
+.flip-card.virado .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 18px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 16px rgba(149, 138, 173, 0.16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Frente do Card */
+.flip-card-front {
+    background: linear-gradient(145deg, #f4ecff, #e6d8ff);
+    color: #3d374a;
+}
+
+.termo-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6a4c9c;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.flip-card-front h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.hangul {
+    font-size: 0.95rem;
+    color: #7b61b8;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.dica-virar {
+    margin-top: 14px;
+    font-size: 0.72rem;
+    color: #7c7291;
+}
+
+/* Verso do Card */
+.flip-card-back {
+    background: linear-gradient(145deg, #e2d0ff, #d2baff);
+    color: #362e45;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.flip-card-back h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #4a3570;
+}
+
+.flip-card-back p {
+    margin: 0;
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+/* --- Suporte ao Modo Escuro (ARMY Bomb) --- */
+body.dark-mode .dicionario-sub {
+    color: #bfb3d6;
+}
+
+body.dark-mode #busca-termo {
+    background: rgba(34, 23, 54, 0.85);
+    border-color: rgba(184, 156, 230, 0.3);
+    color: #f3ebff;
+}
+
+body.dark-mode .flip-card-front {
+    background: linear-gradient(145deg, #271b3d, #1c132e);
+    border-color: rgba(184, 156, 230, 0.25);
+    color: #f3ebff;
+}
+
+body.dark-mode .flip-card-back {
+    background: linear-gradient(145deg, #352354, #26183d);
+    border-color: rgba(184, 156, 230, 0.35);
+    color: #efe6ff;
+}
+
+body.dark-mode .flip-card-back h3,
+body.dark-mode .hangul {
+    color: #d8c2ff;
+}
+
+body.dark-mode .termo-tag {
+    background: rgba(184, 156, 230, 0.18);
+    color: #e4d4ff;
+}
+
+/* ======================
+     LETREIRO FANCHANT
+   ======================*/
+
+.bloco-bts {
+    margin-top: 50px;
+    padding: 18px 0;
+    background: linear-gradient(135deg, #734eaf, #926cce, #b89ce6);
+    color: #ffffff;
+    border-top: 4px solid #4a4458;
+    border-bottom: 4px solid #4a4458;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+.letreiro-trilha {
+    display: flex;
+    width: max-content;
+    animation: rodarNoticias 16s linear infinite;
+}
+
+
+.letreiro-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-right: 25px;
+    font-size: 1.35rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(224, 170, 255, 0.8);
+}
+
+
+.letreiro-conteudo .destaque-bts {
+    font-size: 1.65rem;
+    color: #ffd166;
+    letter-spacing: 3px;
+}
+
+
+@keyframes rodarNoticias {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========
+     FOOTER
+   ==========*/
+
+.rodape {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(184, 156, 230, 0.3);
+    padding: 32px 20px;
+    margin-top: 40px;
+    text-align: center;
+    color: #5c5470;
+}
+
+.rodape-conteudo {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.rodape-logo {
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1.1rem;
+    color: #7b61b8;
+}
+
+.frase-borahae {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6b637d;
+}
+
+.rodape-links {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    gap: 24px;
+}
+
+.rodape-links a {
+    color: #7b61b8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(239, 228, 255, 0.6);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.rodape-links a:hover {
+    background: #e4d4ff;
+    transform: translateY(-2px);
+}
+
+/* ==================
+    MODO ESCURO LOGO
+   ==================*/
+
+/* Transição suave para todas as cores ao trocar de tema */
+body, .cabeca, .cards, .music-card, .rodape {
+    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Deixa o logo clicável e com brilho roxo no modo escuro */
+#logo {
+    cursor: pointer;
+}
+
+body.dark-mode #logo {
+    filter: drop-shadow(0 0 8px #c56cf0);
+}
+
+/* --- ESTILOS DO MODO ESCURO (MODO SHOW) --- */
+body.dark-mode {
+    background-color: #110b1d;
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(142, 68, 173, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(108, 92, 231, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(197, 108, 240, 0.15) 0%, transparent 50%);
+    color: #f3ebff;
+}
+
+/* Cabeçalho e Rodapé escuros translúcidos */
+body.dark-mode .cabeca,
+body.dark-mode .rodape {
+    background: rgba(20, 13, 36, 0.75);
+    border-color: rgba(184, 156, 230, 0.18);
+    color: #e0d4f5;
+}
+
+body.dark-mode .menu a,
+body.dark-mode .title,
+body.dark-mode .rodape-logo,
+body.dark-mode .frase-borahae {
+    color: #e9dcff;
+}
+
+body.dark-mode .menu a:hover {
+    color: #c56cf0;
+}
+
+/* Cards dos membros em roxo noturno */
+body.dark-mode .cards {
+    background: linear-gradient(145deg, #271b3d, #1c132e);
+    border: 1px solid rgba(184, 156, 230, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .cards:hover {
+    background: linear-gradient(145deg, #32224f, #231838);
+    box-shadow: 0 12px 26px rgba(155, 89, 182, 0.3);
+}
+
+body.dark-mode .cards article {
+    color: #f3ebff;
+}
+
+/* Cards de música escuros */
+body.dark-mode .music-card {
+    background: rgba(34, 23, 54, 0.8);
+    border-color: rgba(184, 156, 230, 0.25);
+}
+
+body.dark-mode .music-info h3 {
+    color: #f3ebff;
+}
+
+/* Botões do rodapé no modo escuro */
+body.dark-mode .rodape-links a {
+    background: rgba(184, 156, 230, 0.15);
+    color: #e0d4f5;
+}
+
+body.dark-mode .rodape-links a:hover {
+    background: rgba(184, 156, 230, 0.3);
+}
+
+/*======================
+    GRADIENTE NO MOUSE
+  ======================*/
+
+.luz-mouse {
+    position: fixed;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(184, 156, 230, 0.22) 0%, transparent 70%);
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+/* Fica ainda mais bonito no Modo Escuro */
+body.dark-mode .luz-mouse {
+    background: radial-gradient(circle, rgba(197, 108, 240, 0.28) 0%, transparent 70%);
+}
+
+/*======================
+    ICONES COM CLIQUE
+  ======================*/
+
+.particula-click {
+    position: fixed;
+    pointer-events: none; /* Não atrapalha cliques nos botões */
+    font-size: 1.2rem;
+    z-index: 9999;
+    animation: flutuarSumir 0.9s ease-out forwards;
+}
+
+@keyframes flutuarSumir {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -65px) scale(1.3);
+    }
+}

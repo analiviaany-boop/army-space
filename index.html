@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabeca">
+        <nav class="topo">
+            <img src="img/logo.png" alt="Logo BTS" id="logo" title="Acender / Apagar 💜">
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#bts">Quem São</a></li>
+                <li><a href="#musicas">Mais Tocadas</a></li>
+                <li><a href="#dicio">Dicionário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="home">
+            <div class="home-texto">
+                <img src="img/bts-logo.png" alt="BTS Logo" class="logo-home">
+                <p>BANGTAN SONYEONDAN / BANGTAN BOYS / BEYOND THE SCENE</p>
+                <a href="https://ibighit.com/ko/bts/profile/" target="_blank">Site oficial da BIGHIT</a>
+            </div>
+
+            <button class="seta prev" onclick="mudarFoto(-1)">&#10094;</button>
+            <button class="seta next" onclick="mudarFoto(1)">&#10095;</button>
+        </section>
+
+        <section id="bts" class="bts">
+            <h2 class="title">Quem São</h2>
+
+            <div class="card-container">
+
+                <div class="cards">
+                    <article class="namjoon">
+                        <img src="img/namjoon.jpg" alt="Kim Nam-joon" id="knam">
+                        <h3>Kim Namjoon (RM)</h3>
+                        <p>Kim Nam-joon, conhecido profissionalmente como RM, é um rapper, compositor e produtor musical
+                            sul-coreano. Ele é o líder do grupo BTS, sob a Big Hit Music.</p>
+                    </article>
+                </div>
+
+                <div class="cards">
+                    <article class="jin">
+                        <img src="img/jin.jpg" alt="Kim Seok-jin" id="kjin">
+                        <h3>Kim Seokjin (Jin)</h3>
+                        <p>Kim Seok-jin, conhecido profissionalmente como Jin, é um cantor sul-coreano. Ele ganhou
+                            destaque como integrante do grupo masculino sul-coreano BTS. Jin lançou três faixas solo com
+                            o BTS: "Awake" em 2016, "Epiphany" em 2018 e "Moon" em 2020, todas com sucesso na tabela
+                            Gaon Digital Chart da Coreia do Sul.</p>
+                    </article>
+                </div>
+
+                <div class="cards">
+                    <article class="suga">
+                        <img src="img/suga.jpeg" alt="Min Yoon-gi" id="myoon">
+                        <h3>Min Yoon-gi (Suga)</h3>
+                        <p>Min Yoon-gi, conhecido profissionalmente pelos nomes artísticos Suga e Agust D, é um rapper,
+                            compositor e produtor musical sul-coreano. Ele estreou como integrante do grupo sul-coreano
+                            BTS em junho de 2013, sob a Big Hit Music.</p>
+                    </article>
+                </div>
+
+                <div class="cards">
+                    <article class="j-hope">
+                        <img src="img/j-hope.jpg" alt="Jung Ho-seok" id="jhope">
+                        <h3>Jung Ho-seok (J-Hope)</h3>
+                        <p>Jung Ho-seok, conhecido profissionalmente como J-Hope, é um rapper, cantor, compositor,
+                            dançarino e produtor musical sul-coreano. Ele estreou como integrante do grupo masculino
+                            sul-coreano BTS em 2013, pela Big Hit Entertainment. J-Hope lançou sua primeira mixtape
+                            solo, Hope World, em 2018.</p>
+                    </article>
+                </div>
+
+                <div class="cards">
+                    <article class="jimin">
+                        <img src="img/jimin.jpg" alt="Park Ji-min" id="pmin">
+                        <h3>Park Ji-min</h3>
+                        <p>Park Ji-min OMC, conhecido mononimamente como Jimin, é um cantor, compositor e dançarino
+                            sul-coreano. Em 2013, estreou como integrante do grupo masculino sul-coreano BTS, sob a
+                            gravadora Big Hit Entertainment.</p>
+                    </article>
+                </div>
+
+                <div class="cards">
+                    <article class="v">
+                        <img src="img/v.jpg" alt="Kim Tae-hyung" id="ktae">
+                        <h3>Kim Tae-hyung (V)</h3>
+                        <p>Kim Tae-hyung, conhecido profissionalmente como V, é um cantor, compositor e ator
+                            sul-coreano. Em 2013, estreou como integrante do grupo masculino sul-coreano BTS, sob a Big
+                            Hit Entertainment.</p>
+                    </article>
+                </div>
+
+                <div class="cards">
+                    <article class="kook">
+                        <img src="img/kook.jpg" alt="Jung Jun-kook" id="jkook">
+                        <h3>Jeon Jung-kook</h3>
+                        <p>Jeon Jung-kook, mais frequentemente creditado na carreira musical apenas como Jungkook, é um
+                            cantor, compositor, dançarino e produtor musical sul-coreano. Jungkook ganhou destaque
+                            mundial como membro do grupo masculino BTS, formado em 2013.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="musicas" class="musicas">
+            <h2 class="title">Musicas mais tocadas</h2>
+            <div class="music-grid">
+                <!-- Card 1 -->
+                <div class="music-card">
+                    <div class="cover-container">
+                        <img src="img/dna.jpg" alt="Capa 1">
+                        <button class="play-btn" aria-label="Tocar música">▶</button>
+                    </div>
+                    <div class="music-info">
+                        <h3>#1 DNA</h3>
+                    </div>
+                    <audio src="audios/DNA.mp3"></audio>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="music-card">
+                    <div class="cover-container">
+                        <img src="img/dynamite.jpg" alt="Capa 2">
+                        <button class="play-btn" aria-label="Tocar música">▶</button>
+                    </div>
+                    <div class="music-info">
+                        <h3>#2 Dynamite</h3>
+                    </div>
+                    <audio src="audios/Dynamite.mp3"></audio>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="music-card">
+                    <div class="cover-container">
+                        <img src="img/fake.jpg" alt="Capa 3">
+                        <button class="play-btn" aria-label="Tocar música">▶</button>
+                    </div>
+                    <div class="music-info">
+                        <h3>#3 Fake Love</h3>
+                    </div>
+                    <audio src="audios/fake.mp3"></audio>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="music-card">
+                    <div class="cover-container">
+                        <img src="img/blood.jpg" alt="Capa 4">
+                        <button class="play-btn" aria-label="Tocar música">▶</button>
+                    </div>
+                    <div class="music-info">
+                        <h3>#4 Blood Sweat & Tears (피 땀 눈물)</h3>
+                    </div>
+                    <audio src="audios/blood.mp3"></audio>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="music-card">
+                    <div class="cover-container">
+                        <img src="img/dope.jpg" alt="Capa 5">
+                        <button class="play-btn" aria-label="Tocar música">▶</button>
+                    </div>
+                    <div class="music-info">
+                        <h3>#5 Dope (쩔어)</h3>
+                    </div>
+                    <audio src="audios/dope.mp3"></audio>
+                </div>
+            </div>
+        </section>
+
+        <section id="dicio" class="secao-dicionario">
+            <h2>Dicionário ARMY</h2>
+            <p class="dicionario-sub">Clique nos cards para virar e descobrir o significado 💜</p>
+
+            <!-- Barra de busca instantânea -->
+            <div class="dicionario-busca">
+                <input type="text" id="busca-termo" placeholder="Buscar termo (ex: Borahae, Fanchant, Show)...">
+            </div>
+
+            <div class="dicionario-grid">
+                <!-- Card 1 -->
+                <div class="flip-card" onclick="this.classList.toggle('virado')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="termo-tag">💜 Expressão</span>
+                            <h3>Borahae</h3>
+                            <span class="hangul">보라해</span>
+                            <small class="dica-virar">Toque para virar ↻</small>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Borahae</h3>
+                            <p>Criada por V em 2016, une <em>Bora</em> (roxo) e <em>Saranghae</em> (eu te amo).
+                                Significa confiar e amar até o fim, já que o roxo é a última cor do arco-íris.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flip-card" onclick="this.classList.toggle('virado')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="termo-tag">✨ Fandom</span>
+                            <h3>ARMY</h3>
+                            <span class="hangul">아미</span>
+                            <small class="dica-virar">Toque para virar ↻</small>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>ARMY</h3>
+                            <p>Sigla para <em>Adorable Representative M.C. for Youth</em>. Representa os fãs que estão
+                                sempre ao lado do BTS ("colete à prova de balas").</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flip-card" onclick="this.classList.toggle('virado')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="termo-tag">🎤 Show</span>
+                            <h3>ARMY Bomb</h3>
+                            <span class="hangul">아미밤</span>
+                            <small class="dica-virar">Toque para virar ↻</small>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>ARMY Bomb</h3>
+                            <p>O lightstick oficial do grupo em formato de bomba iluminada, que sincroniza suas luzes
+                                via Bluetooth formando um oceano roxo nos shows.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="flip-card" onclick="this.classList.toggle('virado')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="termo-tag">🎶 Cultura</span>
+                            <h3>Fanchant</h3>
+                            <span class="hangul">응원법</span>
+                            <small class="dica-virar">Toque para virar ↻</small>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Fanchant</h3>
+                            <p>Gritos e nomes dos 7 membros entoados pelos fãs em sincronia durante as músicas ao vivo,
+                                começando por <em>"Kim Namjoon, Kim Seokjin..."</em>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="flip-card" onclick="this.classList.toggle('virado')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="termo-tag">🌱 Identidade</span>
+                            <h3>Bangtan Sonyeondan</h3>
+                            <span class="hangul">방탄소년단</span>
+                            <small class="dica-virar">Toque para virar ↻</small>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Bangtan Sonyeondan</h3>
+                            <p>Nome coreano original do BTS, que significa "Escoteiros à Prova de Balas" — simbolizando
+                                bloquear os preconceitos contra a juventude.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="flip-card" onclick="this.classList.toggle('virado')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="termo-tag">💫 Era</span>
+                            <h3>HYYH</h3>
+                            <span class="hangul">화양연화</span>
+                            <small class="dica-virar">Toque para virar ↻</small>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>HYYH</h3>
+                            <p>Abreviação de <em>HwaYangYeonHwa</em> ("O Momento Mais Bonito da Vida"), era marcante que
+                                deu origem ao universo narrativo (BU) do grupo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="bloco-bts">
+        <div class="letreiro-trilha">
+            <div class="letreiro-conteudo">
+                <span>Kim Namjoon!</span> •
+                <span>Kim Seokjin!</span> •
+                <span>Min Yoongi!</span> •
+                <span>Jung Hoseok!</span> •
+                <span>Park Jimin!</span> •
+                <span>Kim Taehyung!</span> •
+                <span>Jeon Jungkook!</span> •
+                <span class="destaque-bts">BTS!</span> •
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+            <span class="rodape-logo">BTS • ARMY</span>
+            <p class="frase-borahae">"Borahae" 💜 — Feito por Ana Lívia Paixão</p>
+            <ul class="rodape-links">
+                <li><a href="#home">Voltar ao topo ↑</a></li>
+                <li><a href="https://ibighit.com/ko/bts/profile/" target="_blank">BIGHIT MUSIC</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
