@@ -2,7 +2,7 @@
 
 Site de fã (Fandom) dedicado ao grupo sul-coreano **BTS**, desenvolvido com HTML, CSS e JavaScript puro, com estética lilás pastel e suporte completo ao **Modo Show (ARMY Bomb)**.
 
-🔗 **Repositório:** [analiviaany-boop/SITEFAN-BTS](https://github.com/analiviaany-boop/SITEFAN-BTS)
+🔗 **Repositório:** [analiviaany-boop/army-space](https://github.com/analiviaany-boop/army-space)
 
 ---
 
