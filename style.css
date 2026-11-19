@@ -768,3 +768,48 @@ body.dark-mode .luz-mouse {
         transform: translate(-50%, -65px) scale(1.3);
     }
 }
+
+/*==============
+    EASTER EGG
+  ==============*/
+
+/* Toast secreto do Easter Egg */
+.easter-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(30px);
+    background: linear-gradient(135deg, #6a4c9c, #9b72cf);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(106, 76, 156, 0.45);
+    opacity: 0;
+    z-index: 10000;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.easter-toast.visivel {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Chuva de corações roxos */
+.chuva-coracao {
+    position: fixed;
+    top: -40px;
+    font-size: 1.5rem;
+    pointer-events: none;
+    z-index: 9998;
+    animation: cairCoracao linear forwards;
+}
+
+@keyframes cairCoracao {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}

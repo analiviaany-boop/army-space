@@ -123,3 +123,54 @@ document.addEventListener("click", (e) => {
     // Remove do HTML assim que a animação termina
     setTimeout(() => particula.remove(), 900);
 });
+
+// ============================================================================
+// EASTER EGG 1: DIGITAR "ARMY" NO TECLADO
+
+let teclasDigitadas = "";
+
+function ativarEasterEggArmy() {
+    // Ativa o modo escuro (ARMY Bomb)
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("tema", "escuro");
+
+    // Mostra aviso secreto
+    const toast = document.createElement("div");
+    toast.className = "easter-toast";
+    toast.textContent = "💜 Você desbloqueou o Modo ARMY! Bem-vindo(a) ao oceano roxo ✨";
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.classList.add("visivel"), 50);
+    setTimeout(() => {
+        toast.classList.remove("visivel");
+        setTimeout(() => toast.remove(), 400);
+    }, 4000);
+
+    // Cria chuva de 30 corações e brilhos
+    const emojis = ["💜", "🪻", "✨", "🫶"];
+    for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+            const item = document.createElement("span");
+            item.className = "chuva-coracao";
+            item.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            item.style.left = `${Math.random() * 100}vw`;
+            item.style.animationDuration = `${2 + Math.random() * 2}s`;
+            document.body.appendChild(item);
+
+            setTimeout(() => item.remove(), 4000);
+        }, i * 90);
+    }
+}
+
+document.addEventListener("keydown", (e) => {
+    // Ignora se o usuário estiver digitando na barra de pesquisa do dicionário
+    if (document.activeElement.tagName === "INPUT") return;
+
+    teclasDigitadas += e.key.toLowerCase();
+    teclasDigitadas = teclasDigitadas.slice(-4); // Mantém apenas as últimas 4 letras ("army")
+
+    if (teclasDigitadas === "army") {
+        ativarEasterEggArmy();
+        teclasDigitadas = "";
+    }
+});
