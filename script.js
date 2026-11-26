@@ -16,43 +16,70 @@ setInterval(() => mudarFoto(1), 4000);
 // ===========================================================================
 // CARDS DAS MÚSICAS
 
+
+// CARDS DAS MÚSICAS
+
 const botoesPlay = document.querySelectorAll(".play-btn");
+const cardsMusica = document.querySelectorAll(".music-card");
+
+function resetarCard(card) {
+    const audio = card.querySelector("audio");
+    const botao = card.querySelector(".play-btn");
+
+    audio.pause();
+    botao.textContent = "▶";
+    botao.setAttribute("aria-label", "Tocar música");
+    card.classList.remove("tocando");
+}
 
 botoesPlay.forEach(botao => {
-    botao.addEventListener("click", () => {
-        const card = botao.closest(".music-card");
-        const audio = card.querySelector("audio");
 
-        // Se o áudio clicado já estiver tocando, apenas pausa
+    const card = botao.closest(".music-card");
+    const audio = card.querySelector("audio");
+
+    audio.addEventListener("ended", () => {
+        resetarCard(card);
+    });
+
+    audio.addEventListener("error", () => {
+        resetarCard(card);
+        console.error("Erro ao carregar música:", audio.src);
+    });
+
+    botao.addEventListener("click", async () => {
+
         if (!audio.paused) {
-            audio.pause();
-            botao.textContent = "▶";
-            card.classList.remove("tocando");
+            resetarCard(card);
             return;
         }
 
-        // Pausa qualquer outra música que esteja tocando antes de iniciar a nova
-        document.querySelectorAll(".music-card").forEach(outroCard => {
-            const outroAudio = outroCard.querySelector("audio");
-            const outroBotao = outroCard.querySelector(".play-btn");
-            
-            outroAudio.pause();
-            outroBotao.textContent = "▶";
-            outroCard.classList.remove("tocando");
+        // Para as outras músicas
+        cardsMusica.forEach(outroCard => {
+            if (outroCard !== card) {
+                resetarCard(outroCard);
+            }
         });
 
-        // Toca a música escolhida e ativa os efeitos visuais
-        audio.play();
-        botao.textContent = "⏸";
-        card.classList.add("tocando");
+        try {
+            await audio.play();
 
-        // Quando a música acabar sozinha, reseta o card e o botão
-        audio.onended = () => {
-            botao.textContent = "▶";
-            card.classList.remove("tocando");
-        };
+            botao.textContent = "⏸";
+            botao.setAttribute("aria-label", "Pausar música");
+            card.classList.add("tocando");
+
+        } catch (erro) {
+            resetarCard(card);
+
+            console.error("Não foi possível reproduzir:", erro);
+
+            alert(
+                "Não foi possível tocar esta música. " +
+                "Verifique se o arquivo de áudio existe."
+            );
+        }
     });
 });
+
 
 // ===========================================================================
 // DICIONÁRIO ARMY
