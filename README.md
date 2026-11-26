@@ -1,4 +1,4 @@
-# 💜 SITEFAN-BTS
+# 💜 ARMY SPACE
 
 Site de fã (Fandom) dedicado ao grupo sul-coreano **BTS**, desenvolvido com HTML, CSS e JavaScript puro, com estética lilás pastel e suporte completo ao **Modo Show (ARMY Bomb)**.
 
