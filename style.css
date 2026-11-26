@@ -353,6 +353,152 @@ body a{
     color: #ffffff;
 }
 
+/*============================
+        UNIVERSO BT21
+  ============================*/
+
+.bt21-section {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 20px;
+    text-align: center;
+}
+
+.bt21-header h2 {
+    font-size: 2.2rem;
+    color: #5c5470;
+    margin-bottom: 8px;
+}
+
+.bt21-header p {
+    font-size: 0.95rem;
+    color: #6b637d;
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+
+/* Grade de 4 cards por linha (2 linhas com 8 personagens) */
+.bt21-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+/* Visual base do card em lilás pastel */
+.bt21-card {
+    width: 220px;
+    background: linear-gradient(145deg, #efe4ff, #dfd0ff);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 18px;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    box-shadow: 0 6px 16px rgba(149, 138, 173, 0.16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #3d374a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bt21-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(149, 138, 173, 0.28);
+}
+
+/* Círculo de destaque para o personagem */
+.bt21-img-box {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(123, 97, 184, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.bt21-card:hover .bt21-img-box {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.bt21-img-box img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+/* Etiqueta (Badge) com o nome do criador */
+.bt21-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #6a4c9c;
+    margin-bottom: 8px;
+}
+
+.bt21-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    color: #4a3570;
+}
+
+.bt21-card p {
+    margin: 0;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: #4a4458;
+}
+
+/* Toque de cor sutil na borda superior de cada personagem */
+.card-koya   { border-top: 4px solid #7cc6fe; } /* Azul Koya */
+.card-rj     { border-top: 4px solid #ff7b54; } /* Cachecol laranja/vermelho RJ */
+.card-shooky { border-top: 4px solid #c68b59; } /* Marrom biscoito Shooky */
+.card-mang   { border-top: 4px solid #b388eb; } /* Roxo Mang */
+.card-chimmy { border-top: 4px solid #ffd166; } /* Amarelo Chimmy */
+.card-tata   { border-top: 4px solid #ef476f; } /* Vermelho coração Tata */
+.card-cooky  { border-top: 4px solid #ff8fab; } /* Rosa Cooky */
+.card-van    { border-top: 4px solid #8d99ae; } /* Cinza espacial Van */
+
+/* --- Suporte ao Modo Escuro (ARMY Bomb) --- */
+body.dark-mode .bt21-header h2 {
+    color: #e9dcff;
+}
+
+body.dark-mode .bt21-header p {
+    color: #bfb3d6;
+}
+
+body.dark-mode .bt21-card {
+    background: linear-gradient(145deg, #271b3d, #1c132e);
+    border-color: rgba(184, 156, 230, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .bt21-img-box {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .bt21-badge {
+    background: rgba(184, 156, 230, 0.2);
+    color: #e4d4ff;
+}
+
+body.dark-mode .bt21-card h3 {
+    color: #f3ebff;
+}
+
+body.dark-mode .bt21-card p {
+    color: #d8cceb;
+}
+
 /*===================
     DICIONÁRIO ARMY
   ===================*/
